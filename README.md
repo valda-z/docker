@@ -174,3 +174,14 @@ az acr login --name $ACR_NAME
 docker-compose build
 docker-compose push
 ```
+
+## try to run quickly some container
+
+```bash
+export RESOURCE_GROUP=QTEST
+export LOCATION="northeurope"
+
+az container create -g ${RESOURCE_GROUP} -l ${LOCATION} --name myapp --image dockercloud/hello-world:latest --ports 80 --ip-address public
+```
+
+Grab public IP address from output and now you can test it with your browser ..
