@@ -88,7 +88,7 @@ We can build images one by one from command line lets try it for myappspa:
 
 ```bash
 # grab source codes first
-git pull https://github.com/valda-z/docker.git
+git clone https://github.com/valda-z/docker.git
 
 cd ./docker
 
