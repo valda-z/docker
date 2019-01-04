@@ -7,6 +7,9 @@ pipeline {
       }
     }
     stage('build docker images') {
+      environment {
+        ACR = 'xxxxx'
+      }
       parallel {
         stage('build spa') {
           steps {
