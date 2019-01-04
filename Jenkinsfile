@@ -6,7 +6,7 @@ pipeline {
         echo 'TEST'
       }
     }
-    stage('') {
+    stage('error') {
       steps {
         sh 'docker images'
       }
