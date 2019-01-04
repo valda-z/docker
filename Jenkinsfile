@@ -8,7 +8,7 @@ pipeline {
     }
     stage('build spa') {
       steps {
-        sh 'docker build ./myappspa/Dockerfile'
+        sh 'docker build ./myappspa'
       }
     }
     stage('done message') {
