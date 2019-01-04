@@ -20,9 +20,15 @@ pipeline {
         }
       }
     }
-    stage('done message') {
+    stage('deploy') {
       steps {
         echo 'DONE!!'
+        input(message: 'Deploy?', id: 'DEPLOY01', ok: 'Okay')
+      }
+    }
+    stage('complete') {
+      steps {
+        echo 'COMPLETE!'
       }
     }
   }
