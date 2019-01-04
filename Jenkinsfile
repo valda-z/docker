@@ -6,7 +6,7 @@ pipeline {
         echo 'TEST'
       }
     }
-    stage('build spa') {
+    stage('build docker images') {
       parallel {
         stage('build spa') {
           steps {
