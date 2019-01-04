@@ -1,14 +1,19 @@
 pipeline {
   agent any
   stages {
-    stage('test') {
+    stage('test message') {
       steps {
         echo 'TEST'
       }
     }
-    stage('error') {
+    stage('build spa') {
       steps {
-        sh 'docker images'
+        sh 'docker build ./myappspa/Dockerfile'
+      }
+    }
+    stage('done message') {
+      steps {
+        echo 'DONE!!'
       }
     }
   }
