@@ -6,5 +6,10 @@ pipeline {
         echo 'TEST'
       }
     }
+    stage('') {
+      steps {
+        sh 'docker images'
+      }
+    }
   }
 }
