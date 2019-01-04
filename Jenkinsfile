@@ -7,8 +7,17 @@ pipeline {
       }
     }
     stage('build spa') {
-      steps {
-        sh 'docker build ./myappspa'
+      parallel {
+        stage('build spa') {
+          steps {
+            sh 'docker build ./myappspa'
+          }
+        }
+        stage('build todo') {
+          steps {
+            sh 'docker build ./myapptodo'
+          }
+        }
       }
     }
     stage('done message') {
