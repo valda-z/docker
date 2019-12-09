@@ -9,24 +9,17 @@ trigger:
 pool:
   vmImage: 'ubuntu-latest'
 
-steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
-
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
-
-- task: InstallSSHKey@0
-  inputs:
-    knownHostsEntry: $(known_host)
-    sshPublicKey: $(public_key)
-    sshKeySecureFile: 'ssh_private_key'
-  displayName: "Create SSH files"
-
-- script: |
-    ssh -i /home/vsts/work/_temp/ssh_private_key 'ls -al'
-  displayName: 'Configure production server'
+jobs:
+  - job: DeployToPROD
+    steps:
+      - task: InstallSSHKey@0
+        inputs:
+          knownHostsEntry: $(known_host)
+          sshPublicKey: $(public_key)
+          sshKeySecureFile: 'ssh_private_key'
+        displayName: "Create SSH files"
+      - script: |
+          ssh -i /home/vsts/work/_temp/ssh_private_key $(host) 'ls -al'
+        displayName: 'Configure production server'
 
 
