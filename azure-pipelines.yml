@@ -27,8 +27,9 @@ steps:
 
 - task: SSH@0
   inputs:
-    sshEndpoint: root@cloudfield.cz
+    sshEndpoint: svc_cloudfield_cz
     runOptions: commands
     commands: |
       ls -al
+      pwd
 
