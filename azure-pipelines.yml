@@ -18,12 +18,12 @@ steps:
     echo See https://aka.ms/yaml
   displayName: 'Run a multi-line script'
 
-#- task: InstallSSHKey@0
-#  inputs:
-#    knownHostsEntry: $(known_host)
-#    sshPublicKey: $(public_key)
-#    sshKeySecureFile: 'ssh_private_key'
-#  displayName: "Create SSH files"
+- task: InstallSSHKey@0
+  inputs:
+    knownHostsEntry: $(known_host)
+    sshPublicKey: $(public_key)
+    sshKeySecureFile: 'ssh_private_key'
+  displayName: "Create SSH files"
 
 - task: SSH@0
   inputs:
