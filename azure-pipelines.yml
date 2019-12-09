@@ -19,7 +19,7 @@ jobs:
           sshKeySecureFile: 'ssh_private_key'
         displayName: "Create SSH files"
       - script: |
-          ssh -i .ssh/ssh_private_key $(host) 'ls -al'
+          ssh $(host) 'ls -al'
         displayName: 'Configure production server'
 
 
