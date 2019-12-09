@@ -22,6 +22,6 @@ steps:
   inputs:
     knownHostsEntry: $(known_host)
     sshPublicKey: $(public_key)
-    sshKeySecureFile: 'private_key_file'
+    sshKeySecureFile: 'ssh_private_key'
   displayName: "Create SSH files"
 
